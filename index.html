@@ -10,18 +10,26 @@
     <title>W1-Weekend Project</title>
 </head>
 <body>
-    <container class="calcBorder">
+    <div class="container">
     <header>
         <h1>Salary Calculator</h1>
     </header>
     <div>
         <h2>Add Employees</h2>
+        <input id="firstNameIn" placeholder="First Name" type="text">
+        <input id="lastNameIn" placeholder="Last Name" type="text">
+        <input id="idIn" placeholder="ID" type="number">
+        <input id="titleIn" placeholder="Title" type="text">
+        <input id="annualSaleryIn" placeholder="Annual Salery" type="number">
+        <button id="addInfoButton">Submit</button>
     </div>
 
     <div>
         <h2>Employees</h2>
+        <h2 class="monthlyPost">Total Monthly: $<span id="totalMonthlyOut"></span></h2>
     </div>
     
-</container>
+    </div>
+
 </body>
 </html>

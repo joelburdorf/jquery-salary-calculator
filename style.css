@@ -5,6 +5,17 @@ header {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.calcBorder{
-    border: 2px;
+
+.container {width:960px;
+    margin:0 auto;
+    padding:10px 25px;
+    border:1px solid #ccc;
+    background:#fff; }
+
+.addInfoButton{
+    float: right;
+}
+
+.monthlyPost{
+    float: right;
 }
