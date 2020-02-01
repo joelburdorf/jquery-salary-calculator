@@ -1,18 +1,20 @@
 header {
-    color: rgb(82, 218, 20);
+    color: rgb(150, 52, 196);
     font-size: 30px;
     background:rgb(53, 52, 52);
     text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 table {
     border-collapse: collapse;
+    
 }
   
 tr:nth-child(odd) {
-    background-color: lightcoral;
+    background-color: rgb(8, 33, 145);
+    color: greenyellow;
 }
   
 th, td {

@@ -50,6 +50,27 @@ function calcMonthlyAve() {
         el.empty();
         monthlyAve = annualTotal/12
         el.append(monthlyAve)
+        if (monthlyAve>20000){
+            $('.monthlyPost').mouseenter(redLineOverage); 
+            $('.monthlyPost').mouseleave(redLineOverageClear); 
+        }
+}
+
+function redLineOverage() {
+    //console.log('in redLineOverage')
+    $(this).css({"border-color": "black", 
+    "background-color": "red",
+    "border-weight":"4px",
+    "border-style":"solid", 
+    });
+}
+
+function redLineOverageClear() {
+    //console.log('in redLineOverage')
+    $(this).css({"border-color": "black", 
+    "background-color": "pink",
+    "border-weight":"4px",
+    "border-style":"solid"});
 }
 
 function displayEmployee (){
@@ -71,10 +92,10 @@ function displayEmployee (){
     }//end for
 }//end displayEmployee
 
-employees.push( {
-    firstName: 'John',
-    lastName: 'Doe',
-    id: 222,
-    title: 'Engineer',
-    annualSalary: 75000
-});
+// employees.push( {
+//     firstName: 'John',
+//     lastName: 'Doe',
+//     id: 222,
+//     title: 'Engineer',
+//     annualSalary: 75000
+// });
