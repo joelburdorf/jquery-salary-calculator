@@ -8,6 +8,7 @@ let employees = [];
 function onReady() {
     console.log('in onReady');
     $('#addInfoButton').on('click', addEmpInfo);
+    $('#empOut').on('click', '.cell', fireEmp); 
    // $('#songsOut').on('click', '.digButton', digSong);
 } //end onReady
 
@@ -56,23 +57,6 @@ function calcMonthlyAve() {
         }
 }
 
-function redLineOverage() {
-    //console.log('in redLineOverage')
-    $(this).css({"border-color": "black", 
-    "background-color": "red",
-    "border-weight":"4px",
-    "border-style":"solid", 
-    });
-}
-
-function redLineOverageClear() {
-    //console.log('in redLineOverage')
-    $(this).css({"border-color": "black", 
-    "background-color": "pink",
-    "border-weight":"4px",
-    "border-style":"solid"});
-}
-
 function displayEmployee (){
     console.log('in displayEmployee');
     //target an output element by ID
@@ -87,10 +71,35 @@ function displayEmployee (){
         <td class="cell"> ${employees[i].lastName}</td>
         <td class="cell"> ${employees[i].id}</td>
         <td class="cell"> ${employees[i].title}</td>
-        <td class="cell"> ${employees[i].annualSalary}</td>
+        <td class="cell"> $${employees[i].annualSalary}</td>
+        <td class="cell"> <button class="deleteButton">Fire Employee!</button></td>
     </tr>`)
     }//end for
+   
 }//end displayEmployee
+
+
+function fireEmp () {
+   console.log('in fireEmp');
+   console.log($(this).parent().remove())
+}
+
+function redLineOverage() {
+   //target this and change color when mousing over
+    $(this).css({"border-color": "black", 
+    "background-color": "red",
+    "border-weight":"4px",
+    "border-style":"solid", 
+    });
+}
+
+function redLineOverageClear() {
+    //target this and change color when mouse leave
+    $(this).css({"border-color": "black", 
+    "background-color": "pink",
+    "border-weight":"4px",
+    "border-style":"solid"});
+}
 
 // employees.push( {
 //     firstName: 'John',

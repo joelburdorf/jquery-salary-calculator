@@ -24,8 +24,13 @@ th, td {
 .container {width:960px;
     margin:0 auto;
     padding:10px 25px;
-    border:1px solid #ccc;
-    background:#fff; }
+    border:3px solid rgb(3, 2, 2);
+    background:#fff; 
+}
+
+.cell{
+    text-align: center;
+}
 
 .addInfoButton{
     float: right;
@@ -34,4 +39,8 @@ th, td {
 .monthlyPost{
     float: right;
 }
-  
+
+.deleteButton{
+    float: right;
+    color: red;
+}
