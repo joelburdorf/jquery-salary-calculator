@@ -20,17 +20,23 @@
         <input id="lastNameIn" placeholder="Last Name" type="text">
         <input id="idIn" placeholder="ID" type="number">
         <input id="titleIn" placeholder="Title" type="text">
-        <input id="annualSaleryIn" placeholder="Annual Salery" type="number">
+        <input id="annualSalaryIn" placeholder="Annual Salary" type="number">
         <button id="addInfoButton">Submit</button>
     </div>
 
     <div>
         <h2>Employees</h2>
-
-        <UL id="empOut">
-            <li>Employees will go here</li>
-        </UL>
-
+            
+        <table id="empOut">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Employee ID</th>
+                <th>Title</th>
+                <th>Annual Salary</th>
+            </tr>
+           
+        </table>
         <h2 class="monthlyPost">Total Monthly: $<span id="totalMonthlyOut"></span></h2>
     </div>
     
