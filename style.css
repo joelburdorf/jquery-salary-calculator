@@ -1,3 +1,7 @@
+body{
+    background-color: khaki;
+}
+
 header {
     color: rgb(150, 52, 196);
     font-size: 30px;
@@ -9,6 +13,8 @@ header {
 
 table {
     border-collapse: collapse;
+    border: 3px solid rgb(3, 2, 2);
+    outline-width: 11px;
     
 }
   
@@ -19,13 +25,14 @@ tr:nth-child(odd) {
   
 th, td {
     width: 150px;
+    border-bottom: 1px solid #ddd;
 }
 
 .container {width:960px;
     margin:0 auto;
     padding:10px 25px;
     border:3px solid rgb(3, 2, 2);
-    background:#fff; 
+    background:rgb(90, 53, 177); 
 }
 
 .cell{

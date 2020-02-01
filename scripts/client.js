@@ -80,7 +80,7 @@ function displayEmployee (){
 
 
 function fireEmp () {
-   console.log('in fireEmp');
+   //target this and 
    console.log($(this).parent().remove())
 }
 
@@ -101,10 +101,10 @@ function redLineOverageClear() {
     "border-style":"solid"});
 }
 
-// employees.push( {
-//     firstName: 'John',
-//     lastName: 'Doe',
-//     id: 222,
-//     title: 'Engineer',
-//     annualSalary: 75000
-// });
+employees.push( {
+    firstName: 'John',
+    lastName: 'Doe',
+    id: 222,
+    title: 'Engineer',
+    annualSalary: 75000
+});
