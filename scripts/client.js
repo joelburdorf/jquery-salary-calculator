@@ -41,7 +41,7 @@ function calcMonthlyAve() {
     console.log('in calcMonthyAve');
     //loop through employees array
     for (let i=0; i<employees.length; i++){
-        annualTotal += Number(employees[i].annualSalary)
+        annualTotal += Number(employees[i].annualSalary);
     } //end loop
     monthlyAve = annualTotal/12
         //target an output element by ID
@@ -76,5 +76,5 @@ employees.push( {
     lastName: 'Doe',
     id: 222,
     title: 'Engineer',
-    annualSalary: 5000
+    annualSalary: 75000
 });
