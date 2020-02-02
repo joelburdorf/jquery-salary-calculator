@@ -10,12 +10,14 @@ header {
     padding-top: 5px;
     padding-bottom: 5px;
 }
+thead {
+    border: 5px solid rgb(3, 2, 2);
+}
 
 table {
     border-collapse: collapse;
     border: 3px solid rgb(3, 2, 2);
     outline-width: 11px;
-    
 }
   
 tr:nth-child(odd) {
@@ -45,6 +47,7 @@ th, td {
 
 .monthlyPost{
     float: right;
+    
 }
 
 .deleteButton{

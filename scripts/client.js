@@ -9,7 +9,7 @@ function onReady() {
     console.log('in onReady');
     $('#addInfoButton').on('click', addEmpInfo);
     $('#empOut').on('click', '.cell', fireEmp); 
-   // $('#songsOut').on('click', '.digButton', digSong);
+   
 } //end onReady
 
 function addEmpInfo(){
@@ -44,12 +44,12 @@ function calcMonthlyAve() {
     for (let i=0; i<employees.length; i++){
         annualTotal += Number(employees[i].annualSalary);
     } //end loop
-    monthlyAve = annualTotal/12
         //target an output element by ID
         let el = $('#totalMonthlyOut');
         //empty out el
         el.empty();
-        monthlyAve = annualTotal/12
+        //calc monthly average and round to nearest integer
+        monthlyAve = Math.round(annualTotal/12);
         el.append(monthlyAve)
         if (monthlyAve>20000){
             $('.monthlyPost').mouseenter(redLineOverage); 
@@ -78,10 +78,11 @@ function displayEmployee (){
    
 }//end displayEmployee
 
-
 function fireEmp () {
-   //target this and 
-   console.log($(this).parent().remove())
+   //target this and remove obj
+    console.log('in fireEmp');
+    let el = $(this).parent();
+    el.remove();
 }
 
 function redLineOverage() {
@@ -101,10 +102,10 @@ function redLineOverageClear() {
     "border-style":"solid"});
 }
 
-employees.push( {
-    firstName: 'John',
-    lastName: 'Doe',
-    id: 222,
-    title: 'Engineer',
-    annualSalary: 75000
-});
+// employees.push( {
+//     firstName: 'John',
+//     lastName: 'Doe',
+//     id: 222,
+//     title: 'Engineer',
+//     annualSalary: 75000
+// });
