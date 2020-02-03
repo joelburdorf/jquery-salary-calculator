@@ -82,8 +82,8 @@ function displayEmployee (){
         <td class="cell"> ${employees[i].id}</td>
         <td class="cell"> ${employees[i].title}</td>
         <td class="cell"> $${employees[i].annualSalary}</td>
-        <td class="cell1" uID> uniqueID:${employees[i].uniqueId}</td>        //added uniqueID here for testing
-        <td class="cell"> <button class="deleteButton">Fire Employee!</button></td>
+        <td class="cell"> uniqueID:${employees[i].uniqueId}</td>        //added uniqueID here for testing
+        <td class="cell"> <button data-uniqueId="${employees[i].uniqueId}" class="deleteButton" >Fire Employee!</button></td>
     </tr>`)
     }//end for
    
@@ -92,22 +92,24 @@ function displayEmployee (){
 function fireEmp () {
    //target this and remove obj
     console.log('in fireEmp');
-    let el = $(this).parent();
-    console.log(el, 'in el');
-    el.remove();
+    // let el = $(this).parent();
+    // console.log(el, 'in el');
+    // el.remove();
 
     ///////Following code is to target obj I remove with button, but can't figure out how to target correctly
     // let selectId = $(this).parent()[0].innerText;  //// this line is where my code is wrong
-    // console.log('this is selectId', selectId);
-    // //selectId.remove();
-    // for (let i = 0; i < employees.length; i++) {
-    //     let idHolder = employees[i].uniqueId;
-    //     console.log(idHolder);
+    let selectId = $(this).data('uniqueId');
+    console.log('this is selectId', selectId);
+    //selectId.remove();
+    for (let i = 0; i < employees.length; i++) {
+        let idHolder = employees[i].uniqueId;
+        console.log(idHolder);
         
-    //     if (idHolder === selectId) {
-    //         employees.splice(i, 1);
-    //     }
-    // } console.log('employees array after termination', employees);
+        if (idHolder === selectId) {
+            employees.splice(i, 1);
+            console.log('employees array after termination', employees);
+        }
+    } 
 }
 
 function redLineOverage() {
