@@ -15,7 +15,8 @@ function onReady() {
    
 } //end onReady
 
-function addEmpInfo(){
+function addEmpInfo(event){
+    event.preventDefault();   //prevents default action of page refresh form
     console.log('in addEmpInfo', employees);
     // sellect inputs by their ID 
     //use their data in a newObj (using .val as a "getter")
@@ -35,7 +36,7 @@ function addEmpInfo(){
         $('#annualSalaryIn').val('');
         //push new emp object into employees array
         employees.push( newObj);
-        counter += 1;
+         counter += 1;
         //display employeeInfo
         displayEmployee();
         calcMonthlyAve(); 
@@ -60,6 +61,9 @@ function calcMonthlyAve() {
             //following code could be written in multiple ways and I chose mouseenter/leave
             $('.monthlyPost').mouseenter(redLineOverage); 
             $('.monthlyPost').mouseleave(redLineOverageClear); 
+            //$('.monthlyPost').addclass('red');
+        } else {
+            //$('.monthlyPost').addclass('red');
         }
 }
 
@@ -78,7 +82,7 @@ function displayEmployee (){
         <td class="cell"> ${employees[i].id}</td>
         <td class="cell"> ${employees[i].title}</td>
         <td class="cell"> $${employees[i].annualSalary}</td>
-        <td class="cell"> uniqueID:${employees[i].uniqueId}</td>        //added uniqueID here for testing
+        <td class="cell1" uID> uniqueID:${employees[i].uniqueId}</td>        //added uniqueID here for testing
         <td class="cell"> <button class="deleteButton">Fire Employee!</button></td>
     </tr>`)
     }//end for
@@ -89,14 +93,17 @@ function fireEmp () {
    //target this and remove obj
     console.log('in fireEmp');
     let el = $(this).parent();
-    console.log(el, 'in el')
+    console.log(el, 'in el');
     el.remove();
+
     ///////Following code is to target obj I remove with button, but can't figure out how to target correctly
-    // let selectId = $(this).parent()[0].cells;  //// this line is where my code is wrong
+    // let selectId = $(this).parent()[0].innerText;  //// this line is where my code is wrong
     // console.log('this is selectId', selectId);
+    // //selectId.remove();
     // for (let i = 0; i < employees.length; i++) {
     //     let idHolder = employees[i].uniqueId;
     //     console.log(idHolder);
+        
     //     if (idHolder === selectId) {
     //         employees.splice(i, 1);
     //     }
