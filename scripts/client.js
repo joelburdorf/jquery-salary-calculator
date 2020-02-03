@@ -4,6 +4,8 @@ $(document).ready(onReady);
 
 //employee app
 let employees = [];
+
+// create counter to increment a uniqueID automatically 
 let counter = 1000;
 
 function onReady() {
@@ -55,6 +57,7 @@ function calcMonthlyAve() {
         monthlyAve = Math.round(annualTotal/12);
         el.append(monthlyAve)
         if (monthlyAve>20000){
+            //following code could be written in multiple ways and I chose mouseenter/leave
             $('.monthlyPost').mouseenter(redLineOverage); 
             $('.monthlyPost').mouseleave(redLineOverageClear); 
         }
@@ -75,7 +78,7 @@ function displayEmployee (){
         <td class="cell"> ${employees[i].id}</td>
         <td class="cell"> ${employees[i].title}</td>
         <td class="cell"> $${employees[i].annualSalary}</td>
-        <td class="cell"> uniqueID:${employees[i].uniqueId}</td>        ///-
+        <td class="cell"> uniqueID:${employees[i].uniqueId}</td>        //added uniqueID here for testing
         <td class="cell"> <button class="deleteButton">Fire Employee!</button></td>
     </tr>`)
     }//end for
@@ -89,7 +92,7 @@ function fireEmp () {
     console.log(el, 'in el')
     el.remove();
     ///////Following code is to target obj I remove with button, but can't figure out how to target correctly
-    // let selectId = $(this).parent()[0].cells;
+    // let selectId = $(this).parent()[0].cells;  //// this line is where my code is wrong
     // console.log('this is selectId', selectId);
     // for (let i = 0; i < employees.length; i++) {
     //     let idHolder = employees[i].uniqueId;
