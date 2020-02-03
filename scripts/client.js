@@ -4,6 +4,7 @@ $(document).ready(onReady);
 
 //employee app
 let employees = [];
+let counter = 1000;
 
 function onReady() {
     console.log('in onReady');
@@ -20,6 +21,7 @@ function addEmpInfo(){
         firstName: $('#firstNameIn').val(),
         lastName: $('#lastNameIn').val(),
         id: $('#idIn').val(),
+        uniqueId: counter,                //add uniqueID counter and increment by one
         title: $('#titleIn').val(),
         annualSalary: $('#annualSalaryIn').val()
     } // end newObj
@@ -31,6 +33,7 @@ function addEmpInfo(){
         $('#annualSalaryIn').val('');
         //push new emp object into employees array
         employees.push( newObj);
+        counter += 1;
         //display employeeInfo
         displayEmployee();
         calcMonthlyAve(); 
@@ -72,6 +75,7 @@ function displayEmployee (){
         <td class="cell"> ${employees[i].id}</td>
         <td class="cell"> ${employees[i].title}</td>
         <td class="cell"> $${employees[i].annualSalary}</td>
+        <td class="cell"> uniqueID:${employees[i].uniqueId}</td>        ///-
         <td class="cell"> <button class="deleteButton">Fire Employee!</button></td>
     </tr>`)
     }//end for
@@ -82,7 +86,18 @@ function fireEmp () {
    //target this and remove obj
     console.log('in fireEmp');
     let el = $(this).parent();
+    console.log(el, 'in el')
     el.remove();
+    ///////Following code is to target obj I remove with button, but can't figure out how to target correctly
+    // let selectId = $(this).parent()[0].cells;
+    // console.log('this is selectId', selectId);
+    // for (let i = 0; i < employees.length; i++) {
+    //     let idHolder = employees[i].uniqueId;
+    //     console.log(idHolder);
+    //     if (idHolder === selectId) {
+    //         employees.splice(i, 1);
+    //     }
+    // } console.log('employees array after termination', employees);
 }
 
 function redLineOverage() {
@@ -109,3 +124,4 @@ function redLineOverageClear() {
 //     title: 'Engineer',
 //     annualSalary: 75000
 // });
+
